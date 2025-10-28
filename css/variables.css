@@ -1,0 +1,31 @@
+:root {
+  /* 🎨 Paleta de cores */
+  --color-primary: #0077b6;
+  --color-secondary: #0096c7;
+  --color-accent: #48cae4;
+  --color-light: #f8f9fa;
+  --color-dark: #03045e;
+  --color-bg: #ffffff;
+  --color-neutral: #adb5bd;
+  --color-error: #dc3545;
+
+  /* 🔠 Tipografia */
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 20px;
+  --font-size-xl: 28px;
+
+  /* 📏 Espaçamentos */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+
+  /* Outros */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

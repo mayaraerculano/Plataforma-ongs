@@ -3,16 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Voluntários - ONG Solidária</title>
+  <title>Voluntários - Plataforma ONG</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+  <!-- Header -->
   <header>
-    <h1>ONG Solidária</h1>
+    <h1>Plataforma ONG</h1>
     <nav>
       <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sobre.html">Sobre Nós</a></li>
         <li><a href="projetos.html">Projetos</a></li>
         <li><a href="voluntarios.html">Voluntários</a></li>
         <li><a href="doacoes.html">Doações</a></li>
@@ -21,34 +24,19 @@
     </nav>
   </header>
 
-  <main>
-    <section class="voluntarios">
+  <!-- Voluntários -->
+  <section class="section">
+    <div class="container">
       <h2>Seja um Voluntário</h2>
-      <p>Preencha o formulário abaixo e faça parte das nossas ações!</p>
+      <p>Participe dos nossos projetos e faça a diferença na comunidade.</p>
+      <button onclick="window.location.href='contato.html'">Quero Participar</button>
+    </div>
+  </section>
 
-      <form id="form-voluntario">
-        <label>Nome:</label>
-        <input type="text" required>
-
-        <label>Email:</label>
-        <input type="email" required>
-
-        <label>Área de Interesse:</label>
-        <select>
-          <option>Educação</option>
-          <option>Meio Ambiente</option>
-          <option>Ação Social</option>
-        </select>
-
-        <button type="submit">Enviar</button>
-      </form>
-    </section>
-  </main>
-
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 ONG Solidária | Todos os direitos reservados</p>
+    <p>&copy; 2025 Plataforma ONG. Todos os direitos reservados.</p>
   </footer>
 
-  <script src="js/main.js"></script>
 </body>
 </html>
