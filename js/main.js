@@ -1,89 +1,59 @@
-/* ===============================
-   MAIN.JS — Interatividade Básica
-================================ */
+// ==============================
+// js/main.js
+// ==============================
 
-/**
- * Função para alternar o menu no modo mobile
- */
-const hamburger = document.querySelector('.hamburger');
-const nav = document.querySelector('nav');
+// Aguarda o carregamento do DOM
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("🌿 Plataforma ONGs carregada com sucesso!");
 
-if (hamburger) {
-  hamburger.addEventListener('click', () => {
-    nav.classList.toggle('active');
-  });
-}
+  // ====== Alternância de modo escuro/claro ======
+  const toggleBtn = document.querySelector("#modo-escuro");
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
 
-/**
- * Rolagem suave ao clicar nos links do menu
- */
-const menuLinks = document.querySelectorAll('nav ul li a[href^="#"]');
-
-menuLinks.forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    const targetId = link.getAttribute('href');
-    const targetElement = document.querySelector(targetId);
-
-    if (targetElement) {
-      window.scrollTo({
-        top: targetElement.offsetTop - 60,
-        behavior: 'smooth'
-      });
-    }
-
-    // Fecha o menu após clicar em um link no modo mobile
-    nav.classList.remove('active');
-  });
-});
-
-/**
- * Animação simples de feedback nos botões
- */
-const buttons = document.querySelectorAll('button, .btn');
-
-buttons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    btn.classList.add('clicked');
-    setTimeout(() => btn.classList.remove('clicked'), 200);
-  });
-});
-
-/**
- * Feedback de formulário (simulação)
- * Exibe uma mensagem de sucesso e limpa os campos
- */
-const forms = document.querySelectorAll('form');
-
-forms.forEach(form => {
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-
-    // Exibe mensagem de sucesso
-    const successMsg = document.createElement('div');
-    successMsg.className = 'alert alert-success';
-    successMsg.textContent = '✅ Formulário enviado com sucesso!';
-    form.prepend(successMsg);
-
-    // Limpa os campos
-    form.reset();
-
-    // Remove a mensagem após 3 segundos
-    setTimeout(() => {
-      successMsg.remove();
-    }, 3000);
-  });
-});
-
-/**
- * Efeito visual de clique no botão (CSS via classe)
- */
-const style = document.createElement('style');
-style.textContent = `
-  .clicked {
-    transform: scale(0.96);
-    transition: transform 0.1s ease;
+      // Salva a preferência no localStorage
+      if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("tema", "escuro");
+      } else {
+        localStorage.setItem("tema", "claro");
+      }
+    });
   }
-`;
-document.head.appendChild(style);
+
+  // ====== Recupera o tema salvo ======
+  const temaSalvo = localStorage.getItem("tema");
+  if (temaSalvo === "escuro") {
+    document.body.classList.add("dark-mode");
+  }
+
+  // ====== Exemplo: mensagem de carregamento ======
+  const header = document.querySelector("header h1");
+  if (header) {
+    header.title = "Bem-vindo(a) à Plataforma de ONGs 🌱";
+  }
+
+  // ====== Feedback inicial ======
+  const alerta = document.createElement("div");
+  alerta.className = "alerta";
+  alerta.textContent = "Bem-vindo(a)! Explore os projetos e apoie uma causa.";
+  alerta.style.background = "#c9a227";
+  alerta.style.color = "#1b1b1b";
+  alerta.style.padding = "10px";
+  alerta.style.textAlign = "center";
+  alerta.style.fontWeight = "600";
+
+  document.body.prepend(alerta);
+  setTimeout(() => alerta.remove(), 4000);
+});
+
+// ==============================
+// Importação dos módulos
+// ==============================
+
+// ⚠️ Certifique-se de que esses arquivos existam:
+// js/spa.js, js/templates.js e js/validation.js
+import "./spa.js";
+import "./templates.js";
+import "./validation.js";
 
