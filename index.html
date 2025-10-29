@@ -1,139 +1,91 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Plataforma de ONGs</title>
+  <title>Plataforma ONG</title>
 
-  <!-- CSS Principal -->
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="imagens/logo.png" type="image/png" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 </head>
+
 <body>
-
-  <!-- ===============================
-       CABEÇALHO
-  ================================== -->
   <header>
-    <h1>Plataforma de ONGs</h1>
+    <h1>Plataforma ONG</h1>
+    <p>Conectando instituições e voluntários para transformar vidas.</p>
 
-    <nav>
-      <button class="hamburger" aria-label="Abrir menu">☰</button>
-      <ul>
-        <li><a href="#sobre">Sobre Nós</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-        <li><a href="#voluntarios">Voluntários</a></li>
-        <li><a href="#doacoes">Doações</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
+    <button id="modo-escuro" class="btn">Alternar modo</button>
   </header>
 
-  <!-- ===============================
-       SEÇÃO: SOBRE NÓS
-  ================================== -->
-  <section id="sobre" class="section">
-    <div class="container">
-      <h2>Sobre Nós</h2>
-      <p>
-        A Plataforma de ONGs conecta instituições e voluntários que desejam fazer a diferença no mundo.
-        Nosso objetivo é criar um ambiente colaborativo, transparente e acessível para apoiar causas sociais.
-      </p>
-    </div>
-  </section>
+  <nav>
+    <button class="hamburger">☰</button>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="sobre.html">Sobre Nós</a></li>
+      <li><a href="projetos.html">Projetos</a></li>
+      <li><a href="voluntarios.html">Voluntários</a></li>
+      <li><a href="doacoes.html">Doações</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+  </nav>
 
-  <!-- ===============================
-       SEÇÃO: PROJETOS
-  ================================== -->
-  <section id="projetos" class="section">
-    <div class="container">
-      <h2>Projetos em Destaque</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Projeto Esperança</h3>
-          <p>Auxilia famílias em situação de vulnerabilidade com cestas básicas e suporte educacional.</p>
-          <button class="btn">Saiba Mais</button>
-        </div>
-        <div class="card">
-          <h3>Verde no Bairro</h3>
-          <p>Iniciativa de reflorestamento urbano com o envolvimento de voluntários locais.</p>
-          <button class="btn">Saiba Mais</button>
-        </div>
-        <div class="card">
-          <h3>Educar para o Futuro</h3>
-          <p>Programa de reforço escolar e capacitação digital para jovens em comunidades carentes.</p>
-          <button class="btn">Saiba Mais</button>
+  <main id="conteudo" class="container section">
+    <h2>Bem-vindo à Plataforma ONG</h2>
+    <p>Explore nossos projetos, cadastre-se como voluntário ou faça uma doação para apoiar quem precisa.</p>
+
+    <section id="projetos" class="cards">
+      <div class="projeto-card">
+        <h3>Projeto Esperança</h3>
+        <p>Apoio a famílias em situação de vulnerabilidade social.</p>
+        <button class="btn-saiba">Saiba mais</button>
+        <div class="projeto-detalhes oculto">
+          <p>O Projeto Esperança atua desde 2015, distribuindo alimentos e oferecendo capacitação profissional.</p>
         </div>
       </div>
-    </div>
+
+      <div class="projeto-card">
+        <h3>Educar para o Futuro</h3>
+        <p>Iniciativas de alfabetização e reforço escolar para crianças.</p>
+        <button class="btn-saiba">Saiba mais</button>
+        <div class="projeto-detalhes oculto">
+          <p>O Educa+ oferece aulas de matemática e português para estudantes da rede pública.</p>
+        </div>
+      </div>
+
+      <div class="projeto-card">
+        <h3>Saúde Solidária</h3>
+        <p>Campanhas de doação de sangue e orientação médica gratuita.</p>
+        <button class="btn-saiba">Saiba mais</button>
+        <div class="projeto-detalhes oculto">
+          <p>A Saúde Solidária promove a conscientização sobre doação e oferece exames básicos.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <section class="container section">
+    <h2>Entre em Contato</h2>
+    <form id="form-contato">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required />
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+      <button type="submit" class="btn">Enviar</button>
+    </form>
   </section>
 
-  <!-- ===============================
-       SEÇÃO: VOLUNTÁRIOS
-  ================================== -->
-  <section id="voluntarios" class="section">
-    <div class="container">
-      <h2>Seja um Voluntário</h2>
-      <form id="form-voluntario">
-        <label for="nome">Nome</label>
-        <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required />
-
-        <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" placeholder="Seu melhor e-mail" required />
-
-        <label for="area">Área de Interesse</label>
-        <select id="area" name="area" required>
-          <option value="">Selecione...</option>
-          <option value="educacao">Educação</option>
-          <option value="meio-ambiente">Meio Ambiente</option>
-          <option value="saude">Saúde</option>
-          <option value="social">Ação Social</option>
-        </select>
-
-        <button type="submit" class="btn">Cadastrar</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- ===============================
-       SEÇÃO: DOAÇÕES
-  ================================== -->
-  <section id="doacoes" class="section">
-    <div class="container">
-      <h2>Faça uma Doação</h2>
-      <p>Contribua para causas sociais e ajude a transformar vidas.</p>
-      <button class="btn">Doar Agora</button>
-    </div>
-  </section>
-
-  <!-- ===============================
-       SEÇÃO: CONTATO
-  ================================== -->
-  <section id="contato" class="section">
-    <div class="container">
-      <h2>Entre em Contato</h2>
-      <form id="form-contato">
-        <label for="nomeContato">Nome</label>
-        <input type="text" id="nomeContato" name="nomeContato" placeholder="Seu nome" required />
-
-        <label for="emailContato">E-mail</label>
-        <input type="email" id="emailContato" name="emailContato" placeholder="Seu e-mail" required />
-
-        <label for="mensagem">Mensagem</label>
-        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Digite sua mensagem..." required></textarea>
-
-        <button type="submit" class="btn">Enviar</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- ===============================
-       RODAPÉ
-  ================================== -->
   <footer>
-    <p>&copy; 2025 Plataforma de ONGs | Desenvolvido por Mayara Correa Erculano</p>
+    <p>© 2025 Plataforma ONG | Desenvolvido por Mayara Erculano</p>
   </footer>
 
-  <!-- Script principal -->
-  <script src="js/main.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

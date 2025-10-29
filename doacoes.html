@@ -1,42 +1,62 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Doações - Plataforma ONG</title>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doações | Plataforma ONG</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-  <!-- Header -->
-  <header>
-    <h1>Plataforma ONG</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="sobre.html">Sobre Nós</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="voluntarios.html">Voluntários</a></li>
-        <li><a href="doacoes.html">Doações</a></li>
-        <li><a href="contato.html">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
+  <body>
+    <header>
+      <div class="logo">Plataforma ONG</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="voluntarios.html">Voluntários</a></li>
+          <li><a href="doacoes.html" class="ativo">Doações</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+      <button id="modo-escuro">🌓</button>
+    </header>
 
-  <!-- Doações -->
-  <section class="section">
-    <div class="container">
-      <h2>Faça sua Doação</h2>
-      <p>Contribua e ajude a transformar vidas. Sua ajuda faz a diferença!</p>
-      <button>Doar Agora</button>
-    </div>
-  </section>
+    <main>
+      <section class="section container">
+        <h2>Faça uma Doação</h2>
+        <p>
+          Sua contribuição ajuda a manter nossos projetos e a transformar vidas.
+        </p>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Plataforma ONG. Todos os direitos reservados.</p>
-  </footer>
+        <form id="form-doacao">
+          <label for="nome">Nome Completo</label>
+          <input type="text" id="nome" name="nome" required />
 
-</body>
+          <label for="valor">Valor da Doação (R$)</label>
+          <input type="number" id="valor" name="valor" min="5" required />
+
+          <label for="metodo">Método de Pagamento</label>
+          <select id="metodo" name="metodo" required>
+            <option value="">Selecione</option>
+            <option value="pix">PIX</option>
+            <option value="cartao">Cartão de Crédito</option>
+            <option value="boleto">Boleto Bancário</option>
+          </select>
+
+          <button type="submit" class="btn">Doar Agora</button>
+        </form>
+
+        <div id="msg-doacao" class="alert" style="display:none;"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 Plataforma ONG | Desenvolvido por Mayara</p>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
 </html>
+

@@ -1,31 +1,24 @@
 :root {
-  /* 🎨 Paleta de cores */
-  --color-primary: #0077b6;
-  --color-secondary: #0096c7;
-  --color-accent: #48cae4;
-  --color-light: #f8f9fa;
-  --color-dark: #03045e;
-  --color-bg: #ffffff;
-  --color-neutral: #adb5bd;
-  --color-error: #dc3545;
+  --color-primary: #3C54B4;       /* Azul médio elegante */
+  --color-secondary: #C653C2;     /* Magenta vibrante */
+  --color-bg: #90ABDA;            /* Azul claro médio */
+  --color-light: #94CCDB;         /* Azul claro acinzentado */
+  --color-dark: #2E0F23;          /* Roxo escuro */
+  --color-neutral: #ccc;
 
-  /* 🔠 Tipografia */
-  --font-size-xs: 12px;
-  --font-size-sm: 14px;
-  --font-size-md: 16px;
-  --font-size-lg: 20px;
-  --font-size-xl: 28px;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 2rem;
 
-  /* 📏 Espaçamentos */
-  --space-1: 8px;
-  --space-2: 16px;
-  --space-3: 24px;
-  --space-4: 32px;
-  --space-5: 48px;
-  --space-6: 64px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
 
-  /* Outros */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+
+  --shadow-md: 0 2px 6px rgba(46, 15, 35, 0.3);
 }

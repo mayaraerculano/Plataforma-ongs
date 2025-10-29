@@ -1,216 +1,252 @@
-/* ==========================
-   ESTILOS GERAIS (tema preto e dourado)
-========================== */
-:root {
-  --cor-primaria: #1b1b1b;
-  --cor-secundaria: #c9a227;
-  --cor-fundo: #f3f2ed;
-  --cor-texto: #2b2b2b;
-  --cor-clara: #ffffff;
-  --cor-erro: #e63946;
-}
+﻿@import url('variables.css');
 
+/* ===============================
+    ESTILOS GERAIS
+================================ */
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: var(--cor-fundo);
-  color: var(--cor-texto);
+  background-color: var(--color-light);
+  color: var(--color-dark);
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  transition: background 0.3s, color 0.3s;
 }
 
-/* ==========================
-   CABEÇALHO E MENU
-========================== */
+h1, h2, h3, h4, h5 {
+  margin-top: 0;
+}
+
+/* ===============================
+    CABEÇALHO
+================================ */
 header {
-  background-color: var(--cor-primaria);
-  color: var(--cor-secundaria);
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  padding: var(--space-3);
   text-align: center;
-  padding: 20px 0;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
 
 header h1 {
-  margin: 0;
-  font-size: 2rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-2);
 }
 
+/* ===============================
+    NAVEGAÇÃO
+================================ */
 nav {
-  background-color: var(--cor-secundaria);
+  position: relative;
+}
+
+nav ul {
+  list-style: none;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding: 0;
+  margin: 0;
 }
 
-nav a {
-  color: var(--cor-primaria);
+nav ul li a {
   text-decoration: none;
-  padding: 15px 25px;
+  color: var(--color-light);
   font-weight: 600;
-  transition: background 0.3s, color 0.3s;
+  transition: color 0.3s;
 }
 
-nav a:hover {
-  background-color: var(--cor-primaria);
-  color: var(--cor-secundaria);
+nav ul li a:hover {
+  color: var(--color-accent);
 }
 
-/* ==========================
-   CONTEÚDO PRINCIPAL
-========================== */
-main {
-  padding: 40px 20px;
-  text-align: center;
-}
-
-section {
-  margin-bottom: 50px;
-}
-
-h2 {
-  color: var(--cor-primaria);
-  margin-bottom: 15px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-/* ==========================
-   CARDS DE PROJETOS / VOLUNTÁRIOS
-========================== */
-.projeto-card, .voluntario-card {
-  background-color: var(--cor-clara);
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 15px auto;
-  max-width: 400px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.projeto-card:hover, .voluntario-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* ==========================
-   FORMULÁRIOS
-========================== */
-form {
-  max-width: 500px;
-  margin: 0 auto;
-  background-color: var(--cor-clara);
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-}
-
-form label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 600;
-  text-align: left;
-}
-
-form input,
-form textarea,
-form select {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #bbb;
-  border-radius: 6px;
-  font-size: 1rem;
-}
-
-form button {
-  background-color: var(--cor-secundaria);
-  color: var(--cor-primaria);
-  padding: 12px 20px;
+/* Botão Hambúrguer (mobile) */
+.hamburger {
+  display: none;
+  background: none;
+  color: var(--color-light);
+  font-size: 28px;
   border: none;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+}
+
+/* ===============================
+    SEÇÕES GERAIS
+================================ */
+.section {
+  padding: var(--space-5) var(--space-3);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===============================
+    CARDS (APLICANDO O LAYOUT RESPONSIVO DE GRADE)
+================================ */
+.cards {
+  display: grid;
+  /* Cria colunas responsivas: auto-fit para caber quantas colunas for possível,
+     minmax(250px, 1fr) garante o mínimo de 250px e o máximo preenche o espaço */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+/* Estilo do Card em si (aplicado a .projeto-card no seu HTML) */
+.projeto-card {
+  /* No seu HTML, a cor de fundo parecia ser uma variação de azul/lilás claro. 
+     Vou usar o var(--color-bg) que é mais genérico ou você pode definir uma cor específica. */
+  background: var(--color-bg, #b5c7e3); /* Cor de fundo do card */
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s;
+}
+
+.projeto-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Estilo geral de .card (mantido para outros usos, mas o .projeto-card prevalece) */
+.card {
+  background: var(--color-bg);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* ===============================
+    BOTÕES
+================================ */
+button, .btn {
+  background: var(--color-primary);
+  color: var(--color-light);
+  padding: var(--space-2) var(--space-3);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover, .btn:hover {
+  background: var(--color-secondary);
+}
+
+button:disabled, .btn:disabled {
+  background: var(--color-neutral);
+  cursor: not-allowed;
+}
+
+/* Estilo específico do botão "Saiba mais" para corresponder à sua imagem e aos estilos existentes */
+.btn-saiba {
+  background-color: #C653C2; /* Cor destacada que você definiu */
+  color: white;
+  border: none;
+  padding: 6px 12px;
   border-radius: 6px;
   cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s, transform 0.2s;
+  /* Garante que o hover segue seu estilo específico */
 }
 
-form button:hover {
-  background-color: var(--cor-primaria);
-  color: var(--cor-secundaria);
-  transform: scale(1.05);
+.btn-saiba:hover {
+  background-color: #2E0F23;
 }
 
-/* ==========================
-   RODAPÉ
-========================== */
-footer {
-  background-color: var(--cor-primaria);
-  color: var(--cor-secundaria);
-  text-align: center;
-  padding: 15px;
-  margin-top: 50px;
-  font-size: 0.95rem;
-  letter-spacing: 0.5px;
+
+/* ===============================
+    FORMULÁRIOS
+================================ */
+input, textarea, select {
+  width: 100%;
+  padding: var(--space-2);
+  margin-bottom: var(--space-2);
+  border: 1px solid var(--color-neutral);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-md);
 }
 
-/* ==========================
-   MODO ESCURO
-========================== */
-.dark-mode {
-  background-color: #121212;
-  color: #f5f5f5;
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--color-primary);
 }
 
-.dark-mode header,
-.dark-mode footer {
-  background-color: #000000;
-  color: var(--cor-secundaria);
-}
-
-.dark-mode nav {
-  background-color: #2a2a2a;
-}
-
-.dark-mode nav a {
-  color: var(--cor-secundaria);
-}
-
-.dark-mode nav a:hover {
-  background-color: var(--cor-secundaria);
-  color: #000;
-}
-
-/* ==========================
-   RESPONSIVIDADE
-========================== */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-  }
-
-  nav a {
-    padding: 10px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-
-  form {
-    width: 90%;
-  }
-}
-
-/* ==========================
-   CAMPOS COM ERRO (Entrega III)
-========================== */
-input.erro,
-textarea.erro {
-  border: 2px solid var(--cor-erro);
+/* Campos com erro */
+input.erro, textarea.erro {
+  border: 2px solid red;
   background-color: #ffe6e6;
 }
 
-input.erro::placeholder,
-textarea.erro::placeholder {
-  color: #d00000;
+/* ===============================
+    ALERTAS E MENSAGENS
+================================ */
+.alert {
+  padding: var(--space-2);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-3);
+}
+
+.alert-success {
+  background: #d4edda;
+  color: #155724;
+}
+
+.alert-error {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* ===============================
+    RODAPÉ
+================================ */
+footer {
+  background: var(--color-dark);
+  color: var(--color-light);
+  text-align: center;
+  padding: var(--space-3);
+}
+
+/* ===============================
+    RESPONSIVIDADE
+================================ */
+@media (max-width: 576px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: var(--space-2);
+    background: var(--color-primary);
+    padding: var(--space-3);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+
+  nav.active ul {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Estilo dos detalhes ocultos */
+.projeto-detalhes {
+  display: none;
+  background-color: #f8f8f8;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.projeto-detalhes.mostrar {
+  display: block;
 }

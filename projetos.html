@@ -1,54 +1,87 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projetos - Plataforma ONG</title>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projetos | Plataforma ONG</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-  <!-- Header -->
-  <header>
-    <h1>Plataforma ONG</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="sobre.html">Sobre Nós</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="voluntarios.html">Voluntários</a></li>
-        <li><a href="doacoes.html">Doações</a></li>
-        <li><a href="contato.html">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
+  <body>
+    <header>
+      <div class="logo">Plataforma ONG</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="projetos.html" class="ativo">Projetos</a></li>
+          <li><a href="voluntarios.html">Voluntários</a></li>
+          <li><a href="doacoes.html">Doações</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+      <button id="modo-escuro">🌓</button>
+    </header>
 
-  <!-- Projetos -->
-  <section class="section">
-    <div class="container">
-      <h2>Projetos</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Educação</h3>
-          <p>Incentivo à educação e cursos gratuitos para comunidades carentes.</p>
+    <main>
+      <section class="section container">
+        <h2>Projetos em Destaque</h2>
+        <p>
+          Conheça alguns dos projetos que estão transformando comunidades com o
+          apoio de voluntários e doadores.
+        </p>
+
+        <div class="cards">
+          <div class="card">
+            <img
+              src="img/projeto1.jpg"
+              alt="Projeto de alfabetização"
+              class="card-img"
+            />
+            <h3>Educação para Todos</h3>
+            <p>
+              Programa de alfabetização voltado a comunidades carentes, promovendo
+              a inclusão social e o acesso ao conhecimento.
+            </p>
+            <button class="btn">Saiba mais</button>
+          </div>
+
+          <div class="card">
+            <img
+              src="img/projeto2.jpg"
+              alt="Projeto de meio ambiente"
+              class="card-img"
+            />
+            <h3>Verde Esperança</h3>
+            <p>
+              Iniciativa de reflorestamento e conscientização ambiental em escolas
+              públicas.
+            </p>
+            <button class="btn">Saiba mais</button>
+          </div>
+
+          <div class="card">
+            <img
+              src="img/projeto3.jpg"
+              alt="Projeto social com idosos"
+              class="card-img"
+            />
+            <h3>Conectando Gerações</h3>
+            <p>
+              Projeto social que aproxima jovens e idosos através de atividades
+              culturais e recreativas.
+            </p>
+            <button class="btn">Saiba mais</button>
+          </div>
         </div>
-        <div class="card">
-          <h3>Saúde</h3>
-          <p>Campanhas de prevenção, consultas e atendimentos básicos.</p>
-        </div>
-        <div class="card">
-          <h3>Meio Ambiente</h3>
-          <p>Atividades ambientais e projetos de sustentabilidade.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      </section>
+    </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Plataforma ONG. Todos os direitos reservados.</p>
-  </footer>
+    <footer>
+      <p>© 2025 Plataforma ONG | Desenvolvido por Mayara</p>
+    </footer>
 
-</body>
+    <script type="module" src="js/main.js"></script>
+  </body>
 </html>
+

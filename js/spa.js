@@ -1,30 +1,22 @@
-// js/spa.js
-document.addEventListener("DOMContentLoaded", () => {
+export function initSPA() {
   const links = document.querySelectorAll("nav a");
-  const mainContent = document.querySelector("main");
-
-  async function carregarPagina(url) {
-    try {
-      const resposta = await fetch(url);
-      const texto = await resposta.text();
-      mainContent.innerHTML = texto;
-      window.scrollTo(0, 0);
-    } catch (erro) {
-      mainContent.innerHTML = "<p>Erro ao carregar o conteúdo.</p>";
-      console.error(erro);
-    }
-  }
+  const main = document.querySelector("main");
 
   links.forEach(link => {
-    link.addEventListener("click", event => {
-      event.preventDefault();
-      const url = link.getAttribute("href");
-      carregarPagina(url);
-      history.pushState({ url }, "", url);
+    link.addEventListener("click", e => {
+      const href = link.getAttribute("href");
+      if (href && href.endsWith(".html")) {
+        e.preventDefault();
+        fetch(href)
+          .then(resp => resp.text())
+          .then(html => {
+            const temp = document.createElement("div");
+            temp.innerHTML = html;
+            const newMain = temp.querySelector("main");
+            if (newMain) main.innerHTML = newMain.innerHTML;
+            window.history.pushState({}, "", href);
+          });
+      }
     });
   });
-
-  window.addEventListener("popstate", e => {
-    if (e.state && e.state.url) carregarPagina(e.state.url);
-  });
-});
+}

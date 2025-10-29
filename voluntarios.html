@@ -1,42 +1,63 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Voluntários - Plataforma ONG</title>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voluntários | Plataforma ONG</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-  <!-- Header -->
-  <header>
-    <h1>Plataforma ONG</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="sobre.html">Sobre Nós</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="voluntarios.html">Voluntários</a></li>
-        <li><a href="doacoes.html">Doações</a></li>
-        <li><a href="contato.html">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
+  <body>
+    <header>
+      <div class="logo">Plataforma ONG</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="voluntarios.html" class="ativo">Voluntários</a></li>
+          <li><a href="doacoes.html">Doações</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+      <button id="modo-escuro">🌓</button>
+    </header>
 
-  <!-- Voluntários -->
-  <section class="section">
-    <div class="container">
-      <h2>Seja um Voluntário</h2>
-      <p>Participe dos nossos projetos e faça a diferença na comunidade.</p>
-      <button onclick="window.location.href='contato.html'">Quero Participar</button>
-    </div>
-  </section>
+    <main>
+      <section class="section container">
+        <h2>Seja um Voluntário</h2>
+        <p>
+          Cadastre-se para participar dos nossos projetos e fazer a diferença
+          na vida de muitas pessoas.
+        </p>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Plataforma ONG. Todos os direitos reservados.</p>
-  </footer>
+        <form id="form-voluntario">
+          <label for="nome">Nome Completo</label>
+          <input type="text" id="nome" name="nome" required />
 
-</body>
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="area">Área de Interesse</label>
+          <select id="area" name="area" required>
+            <option value="">Selecione</option>
+            <option value="educacao">Educação</option>
+            <option value="meio-ambiente">Meio Ambiente</option>
+            <option value="social">Ação Social</option>
+          </select>
+
+          <button type="submit" class="btn">Cadastrar</button>
+        </form>
+
+        <div id="msg-voluntario" class="alert" style="display:none;"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 Plataforma ONG | Desenvolvido por Mayara</p>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
 </html>
+
